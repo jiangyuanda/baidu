@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="bdti.ico" type="image/x-icon">
+    <title>百度一下，都是广告！</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            border: solid 1px rebeccapurple;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .div-body{
+            width: 655px;
+            margin-top: 12%;
+        }
+        .img{
+            margin: auto;
+            width: 210px;
+        }
+        .img img{
+            width: 100%;
+        }
+       [type=text]{
+           flex: 1 1 70%;
+           font-size: 17px;
+           padding: 10px 15px;
+           border: #c4c7ce 2px solid;
+           outline: none;
+           border-right: none;
+           border-radius: 10px 0 0px 10PX;
+       }
+       [type=text]:hover{
+           border: solid 2px #a7aab5;
+           border-right: none;
+       }
+       [type=text]:focus{
+           border: #4e6ef2 solid 2px;
+           border-right: none;
+       }
+      [type=button]{
+          flex: 1 1 15%;
+          background: #4e6ef2;
+          color: #fff;
+          padding: 10px 15px;
+          font-size: 17px;
+          outline: none;
+          border: 0px solid #4e6ef2;
+          margin-left: -5px;
+          border-radius: 0 10px 10PX 0;
+      }
+      [type=button]:hover{
+        background-color: #4662d9;
+      }
+      .sousuo{
+          
+          display: flex;
+      }
+      .div-footer {
+            background: #fafafa;
+            width: 100%;
+            font-size: 10PX;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 40px;
+            color: #999;
+            margin: 0;
+            text-align: center;
+            line-height: 40px;
+            min-width: 1250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-body">
+        <div class="img">
+            <img src="baidulolg.png" alt="mmp">
+        </div>
+        <div class="sousuo">
+            <input class="search-txt" type='text' id='inp' />
+            <input class="search-btn" type='button' id='btn' value='百度一下' />
+        </div>
+    </div>
+    <div class="div-footer">
+        做着玩！若有侵权，联系删除！<a href="mailto:2998985152@qq.com">2998985152@qq.com邮箱</a>
+    </div>
+</body>
+<script>
+    var oInp = document.getElementById('inp');
+    var oBtn = document.getElementById('btn');
+
+    oBtn.onclick = function () {
+        Search();
+    }
+
+
+    document.onkeydown = function () {
+        if (event.keyCode == 13) {
+            Search();
+        }
+    }
+
+    function Search() {
+        var url = 'https://www.baidu.com/s?wd=' + oInp.value;
+        window.open(url);
+    }
+    document.getElementById('inp').focus();
+</script>
+</html>
